@@ -4,6 +4,7 @@ import {MainMenu} from "@/components/menu/mainmenu";
 import {Footer} from "@/components/menu/footer";
 import {useCart} from "@/provider/CartProvider";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CartPage() {
 
@@ -22,10 +23,10 @@ export default function CartPage() {
                             <h2 className="sr-only">Items in your shopping cart</h2>
 
                             <ul role="list" className="divide-y divide-gray-200 border-t border-b border-gray-200">
-                                {cart.entries?.map((entry, productIdx) => (
+                                {cart.entries?.map((entry) => (
                                     <li key={entry.position} className="flex py-6 sm:py-10">
                                         <div className="shrink-0">
-                                            <img alt={entry.product} src={entry.productThumbnailUrl}
+                                            <Image alt={entry.product} src={entry.productThumbnailUrl}
                                                 className="size-24 rounded-lg object-cover sm:size-32"
                                             />
                                         </div>
@@ -35,7 +36,7 @@ export default function CartPage() {
                                                 <div className="flex justify-between sm:grid sm:grid-cols-2">
                                                     <div className="pr-6">
                                                         <h3 className="text-sm">
-                                                            <Link href={"product/" + entry.product}
+                                                            <Link href={"/product/" + entry.product}
                                                                className="font-medium text-gray-700 hover:text-gray-800">
                                                                 {entry.productName}
                                                             </Link>

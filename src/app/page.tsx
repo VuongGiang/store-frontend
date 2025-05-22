@@ -2,6 +2,7 @@
 
 import {Footer} from "@/components/menu/footer";
 import {MainMenu} from "@/components/menu/mainmenu";
+import Image from 'next/image'
 
 const categories = [
   {
@@ -31,6 +32,7 @@ const categories = [
   },
 ]
 
+// @typescript-eslint/no-explicit-any I don't know how to deal with this
 export default function Example() {
 
   return (
@@ -42,7 +44,7 @@ export default function Example() {
           <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">New arrivals are here</h1>
           <p className="mt-4 text-xl text-white">
             The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release
-            while they're still in stock.
+            while they&apos;re still in stock.
           </p>
           <a href="#"
               className="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium
@@ -75,7 +77,7 @@ export default function Example() {
                             className="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
                         >
                       <span aria-hidden="true" className="absolute inset-0">
-                        <img alt="" src={category.imageSrc} className="size-full object-cover" />
+                        <Image alt="" src={category.imageSrc} className="size-full object-cover" />
                       </span>
                           <span
                               aria-hidden="true"
@@ -101,7 +103,7 @@ export default function Example() {
           <section aria-labelledby="comfort-heading" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
             <div className="relative overflow-hidden rounded-lg">
               <div className="absolute inset-0">
-                <img
+                <Image
                     alt=""
                     src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-01-feature-section-02.jpg"
                     className="size-full object-cover"
@@ -113,7 +115,7 @@ export default function Example() {
                     Simple productivity
                   </h2>
                   <p className="mt-3 text-xl text-white">
-                    Endless tasks, limited hours, a single piece of paper. Not really a haiku, but we're doing our best
+                    Endless tasks, limited hours, a single piece of paper. Not really a haiku, but we&apos;re doing our best
                     here. No kanban boards, burndown charts, or tangled flowcharts with our Focus system. Just the
                     undeniable urge to fill empty circles.
                   </p>

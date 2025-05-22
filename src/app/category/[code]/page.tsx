@@ -3,16 +3,15 @@
 import {MainMenu} from "@/components/menu/mainmenu";
 import {Footer} from "@/components/menu/footer";
 import Link from "next/link";
+import Image from 'next/image'
 
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
 import {CategoryData} from "@/entities/CategoryObjects";
-import {useCart} from "@/provider/CartProvider";
 
-export default function CategoryPage({params}: { params: { code : string }}) {
+export default function CategoryPage() {
 
     const { code } = useParams();
-    const { cart, addToCart } = useCart();
     const [categoryData, setCategoryData] = useState<CategoryData>({ code: "", name: "", products: [] });
 
     useEffect(() => {
@@ -57,9 +56,9 @@ export default function CategoryPage({params}: { params: { code : string }}) {
                                 <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                                     {categoryData.products.map((product) => (
                                         <Link key={product.code} href={'/product/' + product.code } className="group">
-                                            <img
+                                            <Image
                                                 alt={product.name}
-                                                src={product.thumbnailUrl}
+                                                src={product.thumbnailUrl ? product.thumbnailUrl : ''}
                                                 className="aspect-square w-full rounded-lg object-cover group-hover:opacity-75 sm:aspect-[2/3]"
                                             />
                                             <div className="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
@@ -72,7 +71,7 @@ export default function CategoryPage({params}: { params: { code : string }}) {
                                 </div>
                             ) : (
                                 <h3 className="text-2xl font-bold tracking-tight text-gray-700 text-center">
-                                    Sorry we couldn't find any products
+                                    Sorry we couldn&apos;t find any products
                                 </h3>
                             ) }
                         </section>

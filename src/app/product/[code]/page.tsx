@@ -9,6 +9,7 @@ import {SizeSelector} from "@/components/pdp/SizeSelector";
 import {ColorSelector} from "@/components/pdp/ColorSelector";
 import {ProductDescription} from "@/components/pdp/ProductDescription";
 import {useCart} from "@/provider/CartProvider";
+import Image from 'next/image'
 
 /*
 const product = {
@@ -68,7 +69,7 @@ const product = {
 }
 */
 
-export default function ProductPage({params}: { params: { code : string }}) {
+export default function ProductPage() {
 
     const { code } = useParams();
     const { addToCart } = useCart();
@@ -99,7 +100,7 @@ export default function ProductPage({params}: { params: { code : string }}) {
 
                 <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
                     { productData.imageUrls?.slice(0, 3).map((url) => (
-                    <img alt={productData.name} src={url} key={url}
+                    <Image alt={productData.name} src={url} key={url}
                          className="hidden aspect-[3/4] size-full rounded-lg object-cover lg:block"/>
                     ))}
                 </div>

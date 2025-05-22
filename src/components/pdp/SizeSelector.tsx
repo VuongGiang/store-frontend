@@ -5,6 +5,7 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface SizeSelectorProps {
     productData: ProductData,
     setSelectedSize: any,

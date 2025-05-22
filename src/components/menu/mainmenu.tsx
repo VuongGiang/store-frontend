@@ -21,6 +21,7 @@ import {ChevronDownIcon} from "@heroicons/react/20/solid";
 import {LoginMenu} from "@/components/menu/loginmenu";
 import {useCart} from "@/provider/CartProvider";
 import Link from "next/link";
+import Image from 'next/image'
 
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP']
 const navigation = {
@@ -139,11 +140,10 @@ export function MainMenu() {
                                         <div className="grid grid-cols-2 gap-x-4 gap-y-10">
                                             {category.featured.map((item) => (
                                                 <div key={item.name} className="group relative">
-                                                    <img
+                                                    <Image
                                                         alt={item.imageAlt}
                                                         src={item.imageSrc}
-                                                        className="aspect-square w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75"
-                                                    />
+                                                        className="aspect-square w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75"/>
                                                     <a href={item.href} className="mt-6 block text-sm font-medium text-gray-900">
                                                         <span aria-hidden="true" className="absolute inset-0 z-10" />
                                                         {item.name}
@@ -221,7 +221,7 @@ export function MainMenu() {
                                 <div className="hidden lg:flex lg:flex-1 lg:items-center">
                                     <a href="#">
                                         <span className="sr-only">Your Company</span>
-                                        <img
+                                        <Image
                                             alt=""
                                             src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                                             className="h-8 w-auto"
@@ -266,7 +266,7 @@ export function MainMenu() {
                                                                 <div className="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
                                                                     {category.featured.map((item) => (
                                                                         <div key={item.name} className="group relative">
-                                                                            <img
+                                                                            <Image
                                                                                 alt={item.imageAlt}
                                                                                 src={item.imageSrc}
                                                                                 className="aspect-square w-full rounded-md
@@ -321,7 +321,7 @@ export function MainMenu() {
                                 {/* Logo (lg-) */}
                                 <a href="#" className="lg:hidden">
                                     <span className="sr-only">Your Company</span>
-                                    <img
+                                    <Image
                                         alt=""
                                         src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                                         className="h-8 w-auto"

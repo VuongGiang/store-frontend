@@ -5,9 +5,10 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface ColorSelectorProps {
     productData: ProductData,
-    setSelectedColor: any
+    setSelectedColor: any,
     selectedColor: any,
 }
 
