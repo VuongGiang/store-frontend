@@ -1,103 +1,136 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import {Footer} from "@/components/menu/footer";
+import {MainMenu} from "@/components/menu/mainmenu";
+
+const categories = [
+  {
+    name: 'New Arrivals',
+    href: '#',
+    imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-01-category-01.jpg',
+  },
+  {
+    name: 'Productivity',
+    href: '#',
+    imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-01-category-02.jpg',
+  },
+  {
+    name: 'Workspace',
+    href: '#',
+    imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-01-category-04.jpg',
+  },
+  {
+    name: 'Accessories',
+    href: '#',
+    imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-01-category-05.jpg',
+  },
+  {
+    name: 'Sale',
+    href: '#',
+    imageSrc: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-01-category-03.jpg',
+  },
+]
+
+export default function Example() {
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      <div className="bg-white">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+        <MainMenu />
+
+        <div className="relative mx-auto flex flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0 bg-gray-500">
+          <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">New arrivals are here</h1>
+          <p className="mt-4 text-xl text-white">
+            The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release
+            while they're still in stock.
+          </p>
+          <a href="#"
+              className="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium
+                text-gray-900 hover:bg-gray-100">
+            Shop New Arrivals
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        <main>
+          {/* Category section */}
+          <section aria-labelledby="category-heading" className="pt-24 sm:pt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
+            <div className="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0">
+              <h2 id="category-heading" className="text-2xl font-bold tracking-tight text-gray-900">
+                Shop by Category
+              </h2>
+              <a href="#" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+                Browse all categories
+                <span aria-hidden="true"> &rarr;</span>
+              </a>
+            </div>
+
+            <div className="mt-4 flow-root">
+              <div className="-my-2">
+                <div className="relative box-content h-80 overflow-x-auto py-2 xl:overflow-visible">
+                  <div className="absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0">
+                    {categories.map((category) => (
+                        <a
+                            key={category.name}
+                            href={category.href}
+                            className="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto"
+                        >
+                      <span aria-hidden="true" className="absolute inset-0">
+                        <img alt="" src={category.imageSrc} className="size-full object-cover" />
+                      </span>
+                          <span
+                              aria-hidden="true"
+                              className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
+                          />
+                          <span className="relative mt-auto text-center text-xl font-bold text-white">{category.name}</span>
+                        </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 px-4 sm:hidden">
+              <a href="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+                Browse all categories
+                <span aria-hidden="true"> &rarr;</span>
+              </a>
+            </div>
+          </section>
+
+          {/* Featured section */}
+          <section aria-labelledby="comfort-heading" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+            <div className="relative overflow-hidden rounded-lg">
+              <div className="absolute inset-0">
+                <img
+                    alt=""
+                    src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-01-feature-section-02.jpg"
+                    className="size-full object-cover"
+                />
+              </div>
+              <div className="relative bg-gray-900/75 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
+                <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+                  <h2 id="comfort-heading" className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    Simple productivity
+                  </h2>
+                  <p className="mt-3 text-xl text-white">
+                    Endless tasks, limited hours, a single piece of paper. Not really a haiku, but we're doing our best
+                    here. No kanban boards, burndown charts, or tangled flowcharts with our Focus system. Just the
+                    undeniable urge to fill empty circles.
+                  </p>
+                  <a
+                      href="#"
+                      className="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium
+                      text-gray-900 hover:bg-gray-100 sm:w-auto"
+                  >
+                    Shop Focus
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <Footer />
+      </div>
+  )
 }
