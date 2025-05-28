@@ -3,6 +3,7 @@
 import {Footer} from "@/components/menu/footer";
 import {MainMenu} from "@/components/menu/mainmenu";
 import Image from 'next/image'
+import Link from "next/link";
 
 const categories = [
   {
@@ -46,11 +47,11 @@ export default function Example() {
             The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release
             while they&apos;re still in stock.
           </p>
-          <a href="#"
+          <Link href="/category/001"
               className="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium
                 text-gray-900 hover:bg-gray-100">
             Shop New Arrivals
-          </a>
+          </Link>
         </div>
 
         <main>
